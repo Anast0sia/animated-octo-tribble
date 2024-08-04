@@ -2,6 +2,8 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 public class PhoneBookTest {
     PhoneBook book = new PhoneBook();
     @Test
@@ -30,5 +32,15 @@ public class PhoneBookTest {
         book.add(name, expected);
         long actual = book.findByName(name);
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrintAllNames() {
+        book.add("John", 12334184);
+        book.add("John", 5556135);
+        book.add("Matt", 89124523);
+        book.add("Amy", 672108478);
+        List<String> expected = List.of("Amy", "John", "Matt");
+        Assertions.assertEquals(expected, book.printAllNames());
     }
 }

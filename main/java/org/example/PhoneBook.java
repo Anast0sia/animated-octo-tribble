@@ -1,11 +1,12 @@
 package org.example;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PhoneBook {
-    public Map<String, Long> map = new HashMap<>();
+    public Map<String, Long> map = new TreeMap<>();
     public int count = 0;
 
     public int add(String name, long number) {
@@ -33,6 +34,11 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        List<String> list = new ArrayList<>();
+        for (Map.Entry<String, Long> entry : map.entrySet()) {
+            list.add(entry.getKey());
+        }
+        System.out.println(list);
+        return list;
     }
 }

@@ -18,6 +18,7 @@ public class PhoneBookTest {
     public void testFindByNumber() {
         long num = 12334184;
         String expected = "John";
+        book.add(expected, num);
         String actual = book.findByNumber(num);
         Assertions.assertEquals(expected, actual);
     }

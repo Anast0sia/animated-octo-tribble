@@ -22,4 +22,13 @@ public class PhoneBookTest {
         String actual = book.findByNumber(num);
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testFindByName() {
+        String name = "John";
+        long expected = 12334184;
+        book.add(name, expected);
+        long actual = book.findByName(name);
+        Assertions.assertEquals(expected, actual);
+    }
 }

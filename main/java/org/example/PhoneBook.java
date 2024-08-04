@@ -25,6 +25,9 @@ public class PhoneBook {
     }
 
     public long findByName(String name) {
+        if (map.containsKey(name)) {
+            return map.get(name);
+        }
         return 0;
     }
 }
